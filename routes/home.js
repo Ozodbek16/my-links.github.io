@@ -7,9 +7,15 @@ router.get('/', (req, res) => {
     })
 })
 
+<<<<<<< Updated upstream
 router.get('/registr', (req, res) => {
     res.render('registr', {
         title: 'Registr'
+=======
+router.get('/login', (req, res) => {
+    res.render('login', {
+        title: 'Login'
+>>>>>>> Stashed changes
     })
 })
 

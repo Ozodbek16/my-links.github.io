@@ -13,6 +13,7 @@ body {
   background: #fff;
   font-family: "Raleway";
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 .reg {
@@ -92,4 +93,49 @@ footer {
 }
 body {
   height: 100vh;
+}
+
+.login_cart {
+  background: #ffffff;
+  box-shadow: 0px 4px 6px -2px rgba(100, 116, 139, 0.05),
+    0px 10px 15px -3px rgba(100, 116, 139, 0.12);
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 10%;
+}
+
+.login_cart a {
+  text-decoration: none;
+}
+
+.login_form_btn {
+  display: block;
+  background: #5048e5;
+  border-radius: 8px;
+  border: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 26px;
+  color: #ffffff;
+  width: 100%;
+  padding: 11px 0;
+  margin-top: 60px;
+}
+
+.botom {
+  margin-top: 30px;
+}
+
+.login_botom_p {
+  margin-top: 24px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: white;
 }
