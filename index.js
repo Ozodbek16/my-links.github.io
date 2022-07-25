@@ -52,3 +52,5 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log('Server working on port ' + PORT)
 })
+
+// MONGO_URI='mongodb+srv://Ozodbek:q0w9e8r7@cluster0.2834q.mongodb.net/MyLinks'
