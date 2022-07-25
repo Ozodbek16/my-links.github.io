@@ -4,42 +4,35 @@
     <div class="row align-items-center justify-content-center">
       <div class="col-4">
         <div class="form">
-        <div class="prev">
-          <a href="/" class="prev_link">
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 14 14"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.6673 6.16666H3.52565L8.18398 1.50833L7.00065 0.333328L0.333984 6.99999L7.00065 13.6667L8.17565 12.4917L3.52565 7.83333H13.6673V6.16666Z"
-                fill="#5048E5"
-              ></path>
-            </svg>
-            <span>Home</span>
-          </a>
-        </div>
-        <h2 class="form_title">Create a new account</h2>
-        <p class="form_info">Use your email to create new account</p>
-        <form action="" method="post">
+          <div class="prev">
+            <a href="/" class="prev_link">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M13.6673 6.16666H3.52565L8.18398 1.50833L7.00065 0.333328L0.333984 6.99999L7.00065 13.6667L8.17565 12.4917L3.52565 7.83333H13.6673V6.16666Z"
+                  fill="#5048E5"></path>
+              </svg>
+              <span>Home</span>
+            </a>
+          </div>
+          <h2 class="form_title">Create a new account</h2>
+          <p class="form_info">Use your email to create new account</p>
+          <form action="/register" method="post">
             <div class="inputs">
-                <input type="text" class="form-control" placeholder="First name" required>
-                <input type="text" class="form-control" placeholder="Last name" required>
-                <input type="text" class="form-control" placeholder="Email address" required>
-                <input type="password" class="form-control" placeholder="Password" required>
+              <input type="text" name="firstname" class="form-control" placeholder="First name" required>
+              <input type="text" name="lastname" class="form-control" placeholder="Last name" required>
+              <input type="email" name="email" class="form-control" placeholder="Email address" required>
+              <input type="password" name="password" class="form-control" placeholder="Password" required>
             </div>
             <div class="check">
-                <input type="checkbox" required> 
-                <p class="chekbox_info">I have read the <a href="#">Terms and Conditions</a></p>
+              <input type="checkbox" required>
+              <p class="chekbox_info">I have read the <a href="#">Terms and Conditions</a></p>
             </div>
             <button type="submit" class="btn_submit">Terms and Conditions</button>
             <div class="sign_in">
-                <p class="sign_in">Don you have an account? <a href="#">Sign up</a></p>
+              <p class="sign_in">Don you have an account? <a href="#">Sign up</a></p>
             </div>
-        </form>
-      </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

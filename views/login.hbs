@@ -12,10 +12,14 @@
                         </svg></a>
                 </div>
                 <h3>Sign in</h3>
+                {{#if error}}
+                <p style="color: red;">{{error}}</p>
+                {{else}}
+                {{/if}}
             </div>
             <div class="botom">
                 <p>Login with email</p>
-                <form action="">
+                <form action="/login" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">Email adress</label>
                         <input required type="email" class="form-control" name="email" id="email"

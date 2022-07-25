@@ -4,6 +4,7 @@ const { create } = require('express-handlebars')
 const session = require('express-session')
 const path = require('path')
 const MongoDBStore = require('connect-mongodb-session')(session)
+const flash = require('connect-flash')
 
 require('dotenv').config()
 
@@ -16,12 +17,14 @@ const hbs = create({
     }
 })
 
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', './views');
-
+app.use(flash())
 
 require('./helper/db')()
 
@@ -30,7 +33,7 @@ require('./helper/db')()
 const store = new MongoDBStore({
     uri: process.env.MONGO_URI,
     collection: 'mySession',
-    expires: 1000 * 300
+    expires: 1000 * 10
 })
 
 app.use(session({
@@ -42,9 +45,11 @@ app.use(session({
 
 
 const homeRouter = require('./routes/home')
-
+const userRouter = require('./routes/user')
+const authMid = require('./middleware/auth')
 
 app.use(homeRouter)
+app.use('/user', authMid, userRouter)
 
 
 
