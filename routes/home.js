@@ -7,4 +7,10 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/registr', (req, res) => {
+    res.render('registr', {
+        title: 'Registr'
+    })
+})
+
 module.exports = router
