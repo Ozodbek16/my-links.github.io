@@ -16,6 +16,10 @@
           </div>
           <h2 class="form_title">Create a new account</h2>
           <p class="form_info">Use your email to create new account</p>
+          {{#if error}}
+                <p style="color: red;">{{error}}</p>
+                {{else}}
+          {{/if}}
           <form action="/register" method="post">
             <div class="inputs">
               <input type="text" name="firstname" class="form-control" placeholder="First name" required>
