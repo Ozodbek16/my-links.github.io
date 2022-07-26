@@ -36,6 +36,7 @@ router.get('/login', (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
+
     const schema = Joi.object({
         email: Joi.string().required(),
         password: Joi.string().required()
@@ -57,7 +58,9 @@ router.post('/login', async (req, res) => {
         return
     }
 
+    
     const password = await bcryp.compare(req.body.password, user.password)
+
 
     if (!password) {
         req.flash('error', 'Email or password incorrect')
