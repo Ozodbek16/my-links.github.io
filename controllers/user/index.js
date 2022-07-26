@@ -4,7 +4,8 @@ module.exports = {
         res.render('user', {
             title: 'User',
             layout: 'main',
-            user
+            user,
+            isHome: true
         })
     },
     async logout(req, res) {
@@ -17,6 +18,7 @@ module.exports = {
         res.render('edit', {
             title: 'Edit',
             layout: 'main',
+            isEdit: true
         })
     }
 }
