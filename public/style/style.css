@@ -139,3 +139,16 @@ footer a {
 a:hover {
   color: white;
 }
+
+.home_link{
+  display: flex;
+  align-items: center;
+}
+
+.home_link span{
+  margin-left: 10px;
+}
+
+.home_link:hover{
+  color: #5048e5;
+}

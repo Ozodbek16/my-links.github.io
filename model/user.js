@@ -18,6 +18,9 @@ const userSchema = new Schema({
         required: true
     },
     settings: {
+        img: {
+            type: String
+        },
         color: {
             type: String,
             default: '#fff'

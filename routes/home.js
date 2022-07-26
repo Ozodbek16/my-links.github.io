@@ -20,7 +20,7 @@ router.get('/registr', async (req, res) => {
 })
 
 router.post('/register', async (req, res) => {
-    const pass = bcryp.hash(req.body.password, 10)
+    const pass = await bcryp.hash(req.body.password, 10)
     req.body.password = pass
 
     const user = new Schema(req.body)
@@ -31,7 +31,7 @@ router.post('/register', async (req, res) => {
 router.get('/login', (req, res) => {
     res.render('login', {
         title: 'Login',
-        error: req.flash('error')[0],
+        error: req.flash('error'),
     })
 })
 
@@ -54,13 +54,15 @@ router.post('/login', async (req, res) => {
     if (user == null) {
         req.flash('error', 'Email or password incorrect')
         res.redirect('/login')
+        return
     }
 
-    const password = bcryp.compare(req.body.password, user.password)
+    const password = await bcryp.compare(req.body.password, user.password)
 
     if (!password) {
         req.flash('error', 'Email or password incorrect')
         res.redirect('/login')
+        return
     }
 
     req.session.authen = true
