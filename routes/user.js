@@ -1,20 +1,9 @@
 const express = require('express')
 const router = express.Router()
+const controller = require('../controllers/user/index')
 
-router.get('/', (req, res) => {
-    const user = res.locals.user
-    res.render('user', {
-        title: 'User',
-        layout: 'main',
-        user
-    })
-})
+router.get('/', controller.user)
 
-router.get('/logout', async (req, res) => {
-    await req.session.destroy((err) => {
-        if (err) console.log(err);
-        else res.redirect('/')
-    })
-})
+router.get('/logout', controller.logout)
 
 module.exports = router
