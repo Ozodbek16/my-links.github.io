@@ -57,7 +57,6 @@ router.post('/login', async (req, res) => {
         res.redirect('/login')
         return
     }
-
     
     const password = await bcryp.compare(req.body.password, user.password)
 
