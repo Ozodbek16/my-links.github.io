@@ -3,13 +3,20 @@
         <div class="row background align-items-center justify-content-center">
             <div class="col-8" style="display: flex; align-items: center; justify-content: center;">
                 <div class="user_info">
-                    {{#if user.settings.img}}
+                    <div class="relative_img">
+                        {{#if user.settings.img}}
                     <img src="/img/{{user.settings.img}}" alt="" width="32" height="32"
                         class="rounded-circle me-2 user_img">
                     {{else}}
                     <img src="/img/default.png" alt="" width="32" height="32" class="rounded-circle me-2 user_img">
                     {{/if}}
-                    <input type="text" class="user_name" value="{{user.firstname}}">
+                     <label class="absolute_icon_pencil" for="form_img"><img width="40px" height="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Edit_icon_%28the_Noun_Project_30184%29.svg/1024px-Edit_icon_%28the_Noun_Project_30184%29.svg.png" alt="img"></label>
+                    </div>
+                    <form class="img_and_name" action="/user/edit/name/{{user.firstname}}" method="post">
+                        <input type="text" class="user_edit_name form-control" value="{{user.firstname}}" name="firstname">
+                        <input type="file" id="form_img" style="display: none;" name="img">
+                        <button type="submit" class="btn">Edit</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,15 +1,45 @@
-.background{
-    height: 100vh;
+.background {
+  height: 100vh;
 }
 
-.user_info{
+.user_info {
+  display: flex;
+  align-items: center;
+}
+
+.user_img {
+  width: 320px;
+  height: 320px;
+  background: #fff;
+  margin-right: 20px !important;
+}
+
+.img_and_name {
+  position: relative;
+}
+
+.absolute_icon_pencil {
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  cursor: pointer;
+}
+
+.relative_img {
+  position: relative;
+}
+
+.img_and_name{
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
-.user_img{
-    width: 320px;
-    height: 320px;
-    background: #fff;
-    margin-right: 20px !important;
+.user_edit_name{
+    margin-bottom: 10px;
+    border: 1px solid #000;
+    padding: 10px 20px;
+}
+
+.user_edit_name:focus{
+    outline: none;
 }
