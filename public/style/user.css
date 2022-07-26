@@ -1,0 +1,15 @@
+.background{
+    height: 100vh;
+}
+
+.user_info{
+    display: flex;
+    align-items: center;
+}
+
+.user_img{
+    width: 320px;
+    height: 320px;
+    background: #fff;
+    margin-right: 20px !important;
+}
