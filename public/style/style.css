@@ -44,8 +44,8 @@ footer,
   justify-content: center;
   font-size: 14px;
   line-height: 0.8em;
-  min-height: 42px;
-  padding: 0 28px;
+  min-height: 35px;
+  padding: 0 20px;
   background: #1b89e4ed;
   border: 0;
   border-radius: 6.25rem;
@@ -140,15 +140,15 @@ a:hover {
   color: white;
 }
 
-.home_link{
+.home_link {
   display: flex;
   align-items: center;
 }
 
-.home_link span{
+.home_link span {
   margin-left: 10px;
 }
 
-.home_link:hover{
+.home_link:hover {
   color: #5048e5;
 }

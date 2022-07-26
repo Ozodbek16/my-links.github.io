@@ -12,5 +12,11 @@ module.exports = {
             if (err) console.log(err);
             else res.redirect('/')
         })
+    },
+    async editPage(req, res) {
+        res.render('edit', {
+            title: 'Edit',
+            layout: 'main',
+        })
     }
 }

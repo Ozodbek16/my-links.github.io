@@ -6,4 +6,6 @@ router.get('/', controller.user)
 
 router.get('/logout', controller.logout)
 
+router.get('/edit', controller.editPage)
+
 module.exports = router
