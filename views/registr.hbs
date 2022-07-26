@@ -17,8 +17,8 @@
           <h2 class="form_title">Create a new account</h2>
           <p class="form_info">Use your email to create new account</p>
           {{#if error}}
-                <p style="color: red;">{{error}}</p>
-                {{else}}
+          <p style="color: red;">{{error}}</p>
+          {{else}}
           {{/if}}
           <form action="/register" method="post">
             <div class="inputs">
@@ -26,10 +26,6 @@
               <input type="text" name="lastname" class="form-control" placeholder="Last name" required>
               <input type="email" name="email" class="form-control" placeholder="Email address" required>
               <input type="password" name="password" class="form-control" placeholder="Password" required>
-            </div>
-            <div class="check">
-              <input type="checkbox" required>
-              <p class="chekbox_info">I have read the <a href="#">Terms and Conditions</a></p>
             </div>
             <button type="submit" class="btn_submit">Terms and Conditions</button>
             <div class="sign_in">

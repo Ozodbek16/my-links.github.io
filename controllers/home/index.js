@@ -10,10 +10,17 @@ module.exports = {
     },
     async registr(req, res) {
         res.render('registr', {
-            title: 'Registr'
+            title: 'Registr',
+            error: req.flash('error')
         })
     },
     async register(req, res) {
+        const errU = await Schema.find({ firstname: req.body.firstname })
+        if (errU.length > 0) {
+            req.flash('error', 'Username is already taken')
+            res.redirect('/registr')
+            return
+        }
         const pass = await bcryp.hash(req.body.password, 10)
         req.body.password = pass
 
