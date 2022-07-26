@@ -26,7 +26,18 @@ const userSchema = new Schema({
             type: String,
             default: '#fff'
         },
-        social: []
+        social: [
+            {
+                socialName: {
+                    type: String,
+                    required: true
+                },
+                link:{
+                    type: String,
+                    required: true
+                }
+            }
+        ]
     }
 })
 

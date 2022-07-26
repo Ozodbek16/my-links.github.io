@@ -43,3 +43,36 @@
 .user_edit_name:focus{
     outline: none;
 }
+
+.link_form{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 640px;
+}
+
+.link_items{
+    position: relative;
+    display: flex;
+    height: 40px;
+}
+
+.link_inp{
+    width: 490px;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.link_btn{
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.link_select{
+    outline: none;
+    border-radius: 20px;
+    padding: 0 10px;
+    margin-right: 10px;
+}
