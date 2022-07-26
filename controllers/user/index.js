@@ -1,3 +1,5 @@
+const SchemaU = require('../../model/user')
+
 module.exports = {
     async user(req, res) {
         const user = res.locals.user
@@ -20,5 +22,25 @@ module.exports = {
             layout: 'main',
             isEdit: true
         })
+    },
+    async editName(req, res) {
+        const user = await SchemaU.findOne({ firstname: req.params.name })
+
+        if (req.file) {
+            req.body.img = req.file.filename
+        } else {
+            req.body.img = user.settings.img
+        }
+        if (!req.body.firstname) {
+            req.flash('Name is required')
+            res.redirect('/user/edit')
+            return
+        }
+
+        await SchemaU.findOneAndUpdate({ firstname: req.params.name }, {
+            // firstname: req.body.firstname,
+            $set: { 'settings.img': req.body.img, 'firstname': req.body.firstname }
+        })
+        res.redirect('/user')
     }
 }
