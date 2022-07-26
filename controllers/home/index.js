@@ -65,6 +65,12 @@ module.exports = {
             if (err) throw err
             res.redirect('/user')
         })
-    }
+    },
+    // async name(req, res) {
+    //     console.log(req.params.name);
+    //     const user = await Schema.findOne({firstname: req.params.name})
+
+    //     res.send(user)
+    // }
 
 }

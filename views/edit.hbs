@@ -1,0 +1,17 @@
+<div class="user_background">
+    <div class="container">
+        <div class="row background align-items-center justify-content-center">
+            <div class="col-8" style="display: flex; align-items: center; justify-content: center;">
+                <div class="user_info">
+                    {{#if user.settings.img}}
+                    <img src="/img/{{user.settings.img}}" alt="" width="32" height="32"
+                        class="rounded-circle me-2 user_img">
+                    {{else}}
+                    <img src="/img/default.png" alt="" width="32" height="32" class="rounded-circle me-2 user_img">
+                    {{/if}}
+                    <input type="text" class="user_name" value="{{user.firstname}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

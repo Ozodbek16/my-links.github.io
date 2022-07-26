@@ -48,8 +48,8 @@ const homeRouter = require('./routes/home')
 const userRouter = require('./routes/user')
 const authMid = require('./middleware/auth')
 
-app.use(homeRouter)
 app.use('/user', authMid, userRouter)
+app.use(homeRouter)
 
 
 
