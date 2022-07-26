@@ -66,11 +66,17 @@ module.exports = {
             res.redirect('/user')
         })
     },
-    // async name(req, res) {
-    //     console.log(req.params.name);
-    //     const user = await Schema.findOne({firstname: req.params.name})
+    async name(req, res) {
+        if (req.params.name == 'favicon.ico') {
+            return
+        }
+        const user = await Schema.findOne({ firstname: req.params.name })
 
-    //     res.send(user)
-    // }
+        if (!user) {
+            res.send('User not found')
+        } else {
+            res.send(user)
+        }
+    }
 
 }

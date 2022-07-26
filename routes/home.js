@@ -13,6 +13,6 @@ router.get('/login', home.loginPage)
 
 router.post('/login', home.login)
 
-// router.get('/:name', home.name)
+router.get('/:name', home.name)
 
 module.exports = router
