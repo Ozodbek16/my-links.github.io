@@ -82,7 +82,11 @@ module.exports = {
         if (!user) {
             res.send('User not found')
         } else {
-            res.send(user)
+            res.render('userf', {
+                title: user.name,
+                user,
+                layout: 'userf'
+            })
         }
     }
 
