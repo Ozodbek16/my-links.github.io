@@ -24,7 +24,7 @@ const userSchema = new Schema({
         },
         color: {
             type: String,
-            default: '#fff'
+            default: '#7979ff'
         },
         social: [
             {

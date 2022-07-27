@@ -33,7 +33,7 @@ require('./helper/db')()
 const store = new MongoDBStore({
     uri: process.env.MONGO_URI,
     collection: 'mySession',
-    expires: 1000 * 4000
+    expires: 1000 * 600
 })
 
 app.use(session({
