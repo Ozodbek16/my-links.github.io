@@ -1,14 +1,7 @@
-<div class="user_background" style="background-color: {{user.settings.color}};">
-  <div class="container">
-    <div
-      class="row background flex-column align-items-center justify-content-center"
-      style="height: 100vh;"
-    >
-      <div
-        class="col-8 flex-column"
-        style="display: flex; align-items: center; justify-content: center;"
-      >
-        <div class="user_info">
+<div class="user_background" style="background-color: {{user.settings.color}}; height: 100vh;">
+  
+  <div class="user_adas d-flex flex-column align-items-center justify-content-center" style="height: 90%;">
+    <div class="user_info d-flex align-items-center">
           {{#if user.settings.img}}
             <img
               src="/img/{{user.settings.img}}"
@@ -32,21 +25,16 @@
           {{#each user.settings.social}}
             <a class="a_links d-flex align-items-center" href="http://{{link}}">
               <img width="100px" src="" alt="img" style="margin-right: 20px;" />
-              <p>{{socialName}}</p>
+              <p class="social_name">{{socialName}}</p>
             </a>
           {{/each}}
         </div>
-
-        
-      </div>
-
-      <div class="col-1">
-       
-            <a href="/">MyLINKs</a>
-         
-      </div>
-    </div>
   </div>
+       
+    <div class="link_mylinks d-flex align-items-center justify-content-center">
+         <a href="/" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 20px;">MyLINKs</a>
+    </div>
+          
 </div>
 
 <script src="/js/user.js"></script>
