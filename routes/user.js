@@ -11,4 +11,6 @@ router.get('/edit', controller.editPage)
 
 router.post('/edit/name/:name', upload.single('img'), controller.editName)
 
+router.post('/edit/link/:name', controller.newUrl)
+
 module.exports = router

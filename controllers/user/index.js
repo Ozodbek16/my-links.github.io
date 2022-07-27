@@ -1,8 +1,9 @@
+const deleteImg = require('../../middleware/deleteImg')
 const SchemaU = require('../../model/user')
 
 module.exports = {
     async user(req, res) {
-        const user = res.locals.user
+        const user = await SchemaU.findById(res.locals.user._id)
         res.render('user', {
             title: 'User',
             layout: 'main',
@@ -17,9 +18,11 @@ module.exports = {
         })
     },
     async editPage(req, res) {
+        const user = await SchemaU.findById(res.locals.user._id)
         res.render('edit', {
             title: 'Edit',
             layout: 'main',
+            user,
             isEdit: true
         })
     },
@@ -28,6 +31,7 @@ module.exports = {
 
         if (req.file) {
             req.body.img = req.file.filename
+            await deleteImg(user.settings.img)
         } else {
             req.body.img = user.settings.img
         }
@@ -40,6 +44,15 @@ module.exports = {
         await SchemaU.findOneAndUpdate({ firstname: req.params.name }, {
             // firstname: req.body.firstname,
             $set: { 'settings.img': req.body.img, 'firstname': req.body.firstname }
+        })
+        res.redirect('/user')
+    },
+    async newUrl(req, res) {
+        if (req.body.link.indexOf('http://') != -1) {
+            req.body.link = req.body.link.slice(7)
+        }
+        await SchemaU.findOneAndUpdate({ firstname: req.params.name }, {
+            $push: { 'settings.social': req.body }
         })
         res.redirect('/user')
     }

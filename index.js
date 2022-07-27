@@ -13,7 +13,7 @@ const hbs = create({
     defaultLayout: 'layout',
     runtimeOptions: {
         allowProtoMethodsByDefault: true,
-        allowProtoMethodsByDefault: true,
+        allowProtoPropertiesByDefault: true,
     }
 })
 
