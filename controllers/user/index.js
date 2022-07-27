@@ -54,6 +54,8 @@ module.exports = {
     async newUrl(req, res) {
         if (req.body.link.indexOf('http://') != -1) {
             req.body.link = req.body.link.slice(7)
+        }else if(req.body.link.indexOf('https://') != -1){
+            req.body.link = req.body.link.slice(8)
         }
         await SchemaU.findOneAndUpdate({ firstname: req.params.name }, {
             $push: { 'settings.social': req.body }
