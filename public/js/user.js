@@ -4,5 +4,7 @@ const socialImg = document.querySelectorAll('.a_links img');
 for (let i = 0; i < link.length; i++) {
     if (socialName[i].innerHTML == 'Telegram') {
         socialImg[i].src = "/img/telegram.png"
+    } else if (socialName[i].innerHTML == 'Telegram') {
+        socialImg[i].src = "/img/telegram.png"
     }
 }

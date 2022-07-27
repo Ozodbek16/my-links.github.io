@@ -29,11 +29,15 @@ module.exports = {
     async editName(req, res) {
         const user = await SchemaU.findOne({ firstname: req.params.name })
 
-        if (req.file) {
+        if (req.file && user.settings.img) {
             req.body.img = req.file.filename
             await deleteImg(user.settings.img)
-        } else {
+        } else if (user.settings.img) {
             req.body.img = user.settings.img
+        } else if (req.file) {
+            req.body.img = req.file.filename
+        } else {
+            req.body.img = ''
         }
         if (!req.body.firstname) {
             req.flash('Name is required')
