@@ -1,4 +1,4 @@
-<div class="user_background">
+<div class="user_background" style="background: {{user.settings.color}};">
     <div class="container">
         <div class="row background align-items-center justify-content-center">
             <div class="col-8 flex-column" style="display: flex; align-items: center; justify-content: center;">
@@ -42,7 +42,16 @@
                         <button type="submit" class="btn link_btn">Save</button>
                     </div>
                 </form>
+
+                {{#each user.settings.social}}
+                <a class="a_links d-flex align-items-center" href="http://{{link}}">
+                    <img width="100px" src="" alt="img" style="margin-right: 20px;">
+                    <p>{{socialName}}</p>
+                </a>
+                {{/each}}
             </div>
         </div>
     </div>
 </div>
+
+<script src="/js/user.js"></script>
