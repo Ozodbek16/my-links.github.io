@@ -1,3 +1,7 @@
+body{
+  color: #fff;
+}
+
 .background {
   height: 100vh;
 }
@@ -8,10 +12,14 @@
 }
 
 .user_img {
-  width: 320px;
-  height: 320px;
+  width: 200px;
+  height: 200px;
   background: #fff;
   margin-right: 20px !important;
+}
+
+.user_name{
+  font-weight: 600;
 }
 
 .img_and_name {
@@ -75,4 +83,26 @@
     border-radius: 20px;
     padding: 0 10px;
     margin-right: 10px;
+}
+
+.a_links:first-child{
+  margin-top: 30px;
+}
+
+.a_links{
+  margin-top: 10px;
+  width: 500px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.a_links img{
+  border-right: 1px solid #fff;
+} 
+
+.a_links:hover{
+  box-shadow: 0 0 10px #fff;
 }
