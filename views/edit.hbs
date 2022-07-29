@@ -16,6 +16,10 @@
                     </div>
                     <form class="img_and_name" action="/user/edit/name/{{user.firstname}}" method="post"
                         enctype="multipart/form-data">
+                        {{#if error}}
+                            <p style="color: red;">{{error}}</p>
+                        {{else}}
+                        {{/if}}
                         <input type="text" class="user_edit_name form-control" value="{{user.firstname}}"
                             name="firstname">
                         <input type="file" id="form_img" style="display: none;" name="img">

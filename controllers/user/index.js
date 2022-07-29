@@ -23,11 +23,18 @@ module.exports = {
             title: 'Edit',
             layout: 'main',
             user,
-            isEdit: true
+            isEdit: true,
+            error: req.flash('error')
         })
     },
     async editName(req, res) {
         const user = await SchemaU.findOne({ firstname: req.params.name })
+        const users = await SchemaU.find({ firstname: req.params.name })
+        if(users.length > 0){
+            req.flash('error', 'Name is already taken')
+            res.redirect('/user/edit')
+            return
+        }
 
         if (req.file && user.settings.img) {
             req.body.img = req.file.filename
